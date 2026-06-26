@@ -602,6 +602,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hookform/resolvers@npm:^5.4.0":
+  version: 5.4.0
+  resolution: "@hookform/resolvers@npm:5.4.0"
+  dependencies:
+    "@standard-schema/utils": "npm:^0.3.0"
+  peerDependencies:
+    react-hook-form: ^7.55.0
+  checksum: 10c0/ea312948a8ee4dd711287295c95ddd4cefc69d3e01ecf196477aaf5179fbb28b10801486cb3e909abaea169ee7199ce9e725fcded8a98a539ba07aa278753a42
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.2":
   version: 0.19.2
   resolution: "@humanfs/core@npm:0.19.2"
@@ -1090,6 +1101,13 @@ __metadata:
   version: 4.0.0
   resolution: "@sindresorhus/merge-streams@npm:4.0.0"
   checksum: 10c0/482ee543629aa1933b332f811a1ae805a213681ecdd98c042b1c1b89387df63e7812248bb4df3910b02b3cc5589d3d73e4393f30e197c9dde18046ccd471fc6b
+  languageName: node
+  linkType: hard
+
+"@standard-schema/utils@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@standard-schema/utils@npm:0.3.0"
+  checksum: 10c0/6eb74cd13e52d5fc74054df51e37d947ef53f3ab9e02c085665dcca3c38c60ece8d735cebbdf18fbb13c775fbcb9becb3f53109b0e092a63f0f7389ce0993fd0
   languageName: node
   linkType: hard
 
@@ -3106,6 +3124,7 @@ __metadata:
   resolution: "exam-app@workspace:."
   dependencies:
     "@base-ui/react": "npm:^1.6.0"
+    "@hookform/resolvers": "npm:^5.4.0"
     "@tailwindcss/postcss": "npm:^4"
     "@tanstack/react-query": "npm:^5.101.0"
     "@types/node": "npm:^20"

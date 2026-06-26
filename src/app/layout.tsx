@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Inter} from "next/font/google";
+import { Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils/tailwind-cn";
+import { Providers } from "@/components/providers";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -29,7 +30,11 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", inter.variable, geistMono.className)}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }

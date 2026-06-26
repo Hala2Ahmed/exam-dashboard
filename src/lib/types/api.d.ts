@@ -1,15 +1,13 @@
 declare type ErrorResponse = {
-    message: string
     code: number
+    status: boolean
+    message: string
 }
 
 declare type SuccessResponse<T> = {
+    status: boolean
     message: string
-    metadata?: {
-        currentPage: number
-        numberOfPages: number
-        limit: number
-    }
-} & T
+    payload: T
+}
 
 declare type ApiResponse<T> = ErrorResponse | SuccessResponse<T>

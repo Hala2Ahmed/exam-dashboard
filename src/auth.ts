@@ -13,12 +13,12 @@ export const authOptions: NextAuthOptions = {
         Credentials({
             name: 'Credentials',
             credentials: {
-                email: {},
+                username: {},
                 password: {},
             },
             authorize: async (credentials) => {
                 const result = loginSchema.safeParse({
-                    email: credentials?.email,
+                    username: credentials?.username,
                     password: credentials?.password,
                 })
 
@@ -29,10 +29,10 @@ export const authOptions: NextAuthOptions = {
                 const payload = await login(result.data)
 
                 if ('code' in payload) {
-                    throw new Error('Invalid email or password')
+                    throw new Error('Invalid username or password')
                 }
                 return {
-                    id: payload.user._id,
+                    id: payload.user.id,
                     token: payload.token,
                     user: payload.user,
                 }
