@@ -28,13 +28,13 @@ export const authOptions: NextAuthOptions = {
 
                 const payload = await login(result.data)
 
-                if ('code' in payload) {
+                if (!payload.status || !payload.payload) {
                     throw new Error('Invalid username or password')
                 }
                 return {
-                    id: payload.user.id,
-                    token: payload.token,
-                    user: payload.user,
+                    id: payload.payload?.user.id,
+                    token: payload.payload?.token,
+                    user: payload.payload?.user,
                 }
             },
         }),

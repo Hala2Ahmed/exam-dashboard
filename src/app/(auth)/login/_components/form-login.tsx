@@ -9,7 +9,7 @@ import { Field, FieldError, FieldGroup, FieldLabel } from '@/components/ui/field
 import Link from 'next/link'
 import { zodResolver } from '@hookform/resolvers/zod'
 import useLogin from '../_hooks/use-login'
-import { ErrorMessage } from '@/components/features/form-error-message'
+import { ErrorMessage } from '@/components/shared/form-error-message'
 
 export default function LoginForm() {
     //Mutation

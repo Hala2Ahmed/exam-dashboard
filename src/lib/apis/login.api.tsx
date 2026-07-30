@@ -1,8 +1,10 @@
+"use server";
+
 import { API_HEADERS } from "../constants/api-header.constant";
 import { LoginFields, loginResponse } from "../types/auth";
 
 export async function login(loginFields: LoginFields) {
-    const response = await fetch(`${process.env.API}/auth/signin`, {
+    const response = await fetch(`${process.env.API}/auth/login`, {
         method: 'POST',
         body: JSON.stringify(loginFields),
         headers: {

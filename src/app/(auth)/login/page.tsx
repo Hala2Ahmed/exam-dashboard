@@ -4,7 +4,7 @@ import LoginForm from "./_components/form-login";
 export default function page() {
     return (
         <main className="flex flex-col items-center justify-center gap-10 h-full">
-            <div className="flex flex-col gap-10 w-full max-w-113">
+            <div className="flex flex-col gap-5 w-full max-w-113">
                 {/* Heading */}
                 <h2 className="font-inter text-3xl font-bold text-gray-800">Login</h2>
 
