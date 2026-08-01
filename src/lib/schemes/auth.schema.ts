@@ -55,3 +55,21 @@ export const registerSchema = z
         message: 'Password and confirm password must match',
         path: ['confirmPassword'],
     })
+
+export const resetPasswordSchema = z
+    .object({
+        newPassword: z
+            .string()
+            .nonempty('Your password is required')
+            .regex(
+                /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+                'Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number and one special character',
+            ),
+        confirmPassword: z
+            .string()
+            .nonempty('Your password is required'),
+    })
+    .refine((data) => data.newPassword === data.confirmPassword, {
+        message: 'Password and confirm password must match',
+        path: ['confirmPassword'],
+    })

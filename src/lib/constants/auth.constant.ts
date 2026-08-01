@@ -16,3 +16,9 @@ export const STEPPER_STEP: Record<registerSteps, number> = {
 
 export const OTP_COUNTDOWN_KEY = "otp-countdown";
 export const OTP_COUNTDOWN_TIME = 60000;
+
+export const FORGOT_PASSWORD_STEPS = {
+    EMAIL: "email",
+    CHECK_EMAIL: "check-email",
+    RESET_PASSWORD: "reset-password"
+} as const
