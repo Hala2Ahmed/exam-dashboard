@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const authRoutes = ['/login', '/register', '/forgot-password']
 
-export default async function middleware(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
     const token = await getToken({ req: request })
 
     // The requested page is a protected route

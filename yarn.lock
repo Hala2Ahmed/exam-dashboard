@@ -3157,6 +3157,7 @@ __metadata:
     react: "npm:19.2.4"
     react-dom: "npm:19.2.4"
     react-hook-form: "npm:^7.80.0"
+    react-infinite-scroll-component: "npm:^7.2.1"
     react-phone-number-input: "npm:^3.4.17"
     shadcn: "npm:^4.11.0"
     sonner: "npm:^2.0.7"
@@ -5556,6 +5557,16 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18 || ^19
   checksum: 10c0/9a2a1316a562d3a144e3854ce22123b08fe886c8e0327a0682d3d30312a851beac115049f285bacd20d9dd1bdfe7d05333b5dab8ecb9b18c2976557220c8e648
+  languageName: node
+  linkType: hard
+
+"react-infinite-scroll-component@npm:^7.2.1":
+  version: 7.2.1
+  resolution: "react-infinite-scroll-component@npm:7.2.1"
+  peerDependencies:
+    react: ">=17"
+    react-dom: ">=17"
+  checksum: 10c0/e4b09d46fa4e4ddd80db7d436dca372d16f2b5c8414de5b46c584ba981aa61d741a58e7c80beaef079a58ae7a0d054f40198a491e3534a9d55143c7ba7546c35
   languageName: node
   linkType: hard
 
