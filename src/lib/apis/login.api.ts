@@ -8,7 +8,7 @@ export async function login(loginFields: LoginFields) {
         method: 'POST',
         body: JSON.stringify(loginFields),
         headers: {
-            ...API_HEADERS,
+            ...API_HEADERS.jsonBody,
         },
     })
 

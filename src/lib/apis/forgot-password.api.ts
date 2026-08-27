@@ -11,7 +11,7 @@ export async function sendEmail(emailStepField: EmailStepField) {
             redirectUrl: `${process.env.NEXTAUTH_URL}/forgot-password`,
         }),
         headers: {
-            ...API_HEADERS,
+            ...API_HEADERS.jsonBody,
         },
     })
 
@@ -26,7 +26,7 @@ export async function resetPassword(resetPasswordFields: ResetPasswordFields, to
             token,
             ...resetPasswordFields
         }),
-        headers: { ...API_HEADERS },
+        headers: { ...API_HEADERS.jsonBody },
     })
 
     const payload: ApiResponse<null> = await response.json()

@@ -8,7 +8,7 @@ export async function sendOtp(emailStepField: EmailStepField) {
         method: 'POST',
         body: JSON.stringify(emailStepField),
         headers: {
-            ...API_HEADERS,
+            ...API_HEADERS.jsonBody,
         },
     })
 
