@@ -1,3 +1,4 @@
+import * as React from "react"
 import Link from "next/link"
 import {
     Breadcrumb,
@@ -21,27 +22,31 @@ export default function PageBreadcrumb({ items }: PageBreadcrumbProps) {
     return (
         <Breadcrumb>
             <BreadcrumbList>
-                {items.map((item, index) => (
-                    // Render each breadcrumb item
-                    <BreadcrumbItem key={item.label}>
-                        {index === items.length - 1 || !item.href ? (
-                            // Render the current page as text
-                            <BreadcrumbPage className="text-blue-600 py-4">
-                                {item.label}
-                            </BreadcrumbPage>
-                        ) : (
-                            // Render previous pages as links
-                            <>
-                                <BreadcrumbLink render={<Link href={item.href} />}>
-                                    {item.label}
-                                </BreadcrumbLink>
+                {items.map((item, index) => {
+                    const isLast = index === items.length - 1
 
-                                {/*Add separator between items */}
-                                <BreadcrumbSeparator />
-                            </>
-                        )}
-                    </BreadcrumbItem>
-                ))}
+                    return (
+                        // Fragment groups the item
+                        <React.Fragment key={item.label}>
+                            <BreadcrumbItem>
+                                {isLast || !item.href ? (
+                                    // Render the current page as text
+                                    <BreadcrumbPage className="text-blue-600 py-4">
+                                        {item.label}
+                                    </BreadcrumbPage>
+                                ) : (
+                                    // Render previous pages as links
+                                    <BreadcrumbLink render={<Link href={item.href} />}>
+                                        {item.label}
+                                    </BreadcrumbLink>
+                                )}
+                            </BreadcrumbItem>
+
+                            {/* Separator */}
+                            {!isLast && <BreadcrumbSeparator />}
+                        </React.Fragment>
+                    )
+                })}
             </BreadcrumbList>
         </Breadcrumb>
     )

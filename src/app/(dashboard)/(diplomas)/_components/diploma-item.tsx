@@ -10,7 +10,7 @@ export default function DiplomaItem({ diploma }: DiplomaItemProps) {
   return (
     <li className=" h-64 overflow-hidden md:h-72 lg:h-100">
       {/* Link to the diploma details page */}
-      <Link href={`/diplomas/${diploma.id}`} className="relative block h-full w-full">
+      <Link href={`/${diploma.id}/exams`} className="relative block h-full w-full">
 
         {/* Display the diploma image */}
         <Image
