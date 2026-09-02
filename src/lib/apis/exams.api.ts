@@ -32,3 +32,23 @@ export async function getExamsByDiploma(diplomaId: string): Promise<ApiResponse<
     const payload: ApiResponse<PaginatedResponse<Exam>> = await response.json()
     return payload
 }
+
+// Fetch a single exam by its id
+export async function getExamById(examId: string) {
+    const token = await getToken();
+
+    if (!token?.token) {
+        return RESPONSE.unauthorized
+    }
+
+    const response = await fetch(`${process.env.API}/exams/${examId}`, {
+        method: 'GET',
+        headers: {
+            ...API_HEADERS.jsonBody,
+            ...API_HEADERS.authorization(token.token),
+        },
+    })
+
+    const payload: ApiResponse<{ exam: Exam }> = await response.json()
+    return payload
+}

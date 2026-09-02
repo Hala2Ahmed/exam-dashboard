@@ -37,7 +37,7 @@ export default function ExamItem({ exam }: ExamItemProps) {
 
             {/* Navigates to the exam-taking page */}
             <Link
-                href={`/exams/${exam.id}`}
+                href={`/${exam.diplomaId}/exams/${exam.id}/take`}
                 className="shrink-0 rounded-md bg-blue-600 px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-blue-700"
             >
                 Start
