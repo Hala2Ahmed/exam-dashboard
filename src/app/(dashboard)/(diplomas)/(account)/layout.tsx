@@ -14,12 +14,10 @@ export default function AccountSettingsLayout({ children }: { children: React.Re
                 <PageHeader title="Account Settings" icon={User} showBack />
             </div>
 
-            <div className="my-6 flex gap-6 overflow-hidden">
-                {/* Sidebar */}
+            <div className="my-6 flex flex-col gap-4 overflow-hidden sm:flex-row sm:gap-6">
                 <AccountSidebar />
 
-                {/* Main content */}
-                <div className="min-w-0 flex-1 p-4 sm:p-6 bg-white">
+                <div className="min-w-0 flex-1 bg-white p-4 sm:p-6">
                     {children}
                 </div>
             </div>
