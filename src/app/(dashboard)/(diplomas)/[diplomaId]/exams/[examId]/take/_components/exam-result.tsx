@@ -17,7 +17,7 @@ export default function ExamResult({ result, onRestart, examTitle, totalQuestion
     const { submission, analytics } = result
 
     return (
-        <div className="mt-6 rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+        <div className="mt-6 border border-gray-100 bg-white p-6 shadow-sm">
             <ExamHeader
                 examTitle={examTitle}
                 currentQuestion={totalQuestions}
@@ -76,10 +76,10 @@ export default function ExamResult({ result, onRestart, examTitle, totalQuestion
             </div>
 
             {/* Provides options to restart the exam or return to the home page */}
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <RestartButton onRestart={onRestart} />
 
-                <Link href="/" className={buttonVariants({ variant: "default", className: "flex-1" })}>
+                <Link href="/" className={buttonVariants({ variant: "default", className: "flex-1 min-w-0" })}>
                     <Compass size={16} />
                     Explore
                 </Link>

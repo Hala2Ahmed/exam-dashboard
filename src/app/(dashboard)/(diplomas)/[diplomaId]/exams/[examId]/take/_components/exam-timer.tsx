@@ -65,7 +65,7 @@ export default function ExamTimer({ durationMinutes, examId, onTimeUp }: ExamTim
         <div
             role="timer"
             aria-label={`${minutes} minutes and ${seconds} seconds remaining`}
-            className="relative flex size-14 shrink-0 items-center justify-center"
+            className="relative flex size-14 shrink-0 items-center justify-center sm:size-15"
         >
             <svg className="absolute inset-0 -rotate-90" viewBox="0 0 48 48">
                 {/* Background track circle */}

@@ -14,7 +14,7 @@ interface QuestionCardProps {
 export default function QuestionCard({ question, control }: QuestionCardProps) {
     return (
         <fieldset>
-            <legend className="text-2xl font-semibold text-blue-600 font-mono">
+            <legend className="font-mono text-lg font-semibold text-blue-600 sm:text-2xl">
                 {question.text}
             </legend>
 

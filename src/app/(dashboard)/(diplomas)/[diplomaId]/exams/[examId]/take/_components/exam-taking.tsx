@@ -111,9 +111,9 @@ export default function ExamTaking({ examId, examTitle, duration, questions }: E
     }
 
     return (
-        <div className="mt-6 rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-            <div className="flex items-center gap-6">
-                <div className="relative flex-1 pr-6 after:absolute after:inset-y-0 after:right-0 after:w-px after:bg-gray-200">
+        <div className="mt-6 border border-gray-100 bg-white p-4 shadow-sm sm:p-6">
+            <div className="flex items-center gap-4 sm:gap-6">
+                <div className="relative min-w-0 flex-1 pr-4 after:absolute after:inset-y-0 after:right-0 after:w-px after:bg-gray-200 sm:pr-6">
                     <ExamHeader
                         examTitle={examTitle}
                         currentQuestion={currentIndex + 1}
@@ -125,34 +125,34 @@ export default function ExamTaking({ examId, examTitle, duration, questions }: E
                 <ExamTimer durationMinutes={duration} examId={examId} onTimeUp={handleTimeUp} />
             </div>
 
-            <div className="mt-8">
+            <div className="mt-6 sm:mt-8">
                 <QuestionCard question={currentQuestion} control={control} />
             </div>
 
-            <div className="mt-8 flex items-center gap-3">
+            <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
                 {/* Go back one question (disabled on the first question) */}
                 <Button
                     type="button"
                     variant="secondary"
                     onClick={() => setCurrentIndex((prev) => prev - 1)}
                     disabled={isFirst}
-                    className="flex-1"
+                    className="flex-1 min-w-0"
                 >
-                    <ChevronLeft size={16} />
+                    <ChevronLeft size={16} className="hidden sm:inline" />
                     Previous
                 </Button>
 
                 {isLast ? (
                     // Finish the exam
-                    <Button type="button" onClick={handleManualSubmit} disabled={isSubmitting} className="flex-1">
+                    <Button type="button" onClick={handleManualSubmit} disabled={isSubmitting} className="flex-1 min-w-0">
                         <Flag size={16} />
                         {isSubmitting ? "Submitting..." : "Finish"}
                     </Button>
                 ) : (
                     // Go to the next question
-                    <Button type="button" onClick={() => setCurrentIndex((prev) => prev + 1)} className="flex-1">
+                    <Button type="button" onClick={() => setCurrentIndex((prev) => prev + 1)} className="flex-1 min-w-0">
                         Next
-                        <ChevronRight size={16} />
+                        <ChevronRight size={16} className="hidden sm:inline" />
                     </Button>
                 )}
             </div>

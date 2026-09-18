@@ -7,7 +7,7 @@ interface RestartButtonProps {
 
 export default function RestartButton({ onRestart }: RestartButtonProps) {
     return (
-        <Button type="button" variant="secondary" onClick={onRestart} className="flex-1">
+        <Button type="button" variant="secondary" onClick={onRestart} className="flex-1 min-w-0">
             <RotateCcw size={16} />
             Restart
         </Button>
