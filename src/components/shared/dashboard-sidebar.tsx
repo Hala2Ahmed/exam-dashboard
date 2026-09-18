@@ -23,7 +23,7 @@ const items = [
     },
     {
         title: "Account Settings",
-        url: "/account-settings",
+        url: "/profile",
         icon: User,
     },
 ]

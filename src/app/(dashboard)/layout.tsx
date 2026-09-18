@@ -16,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </header>
 
                 {/* Main content */}
-                <div className="flex-1 px-6">
+                <div className="flex-1 px-6 bg-gray-50">
                     {children}
                 </div>
             </SidebarInset>
